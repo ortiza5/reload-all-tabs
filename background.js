@@ -26,6 +26,10 @@ function selectAllTabs() {
     //   chrome.tabs.update(tab.id, { selected: true });
     // });
 
+    // tabs.forEach((tab) => {
+    //   chrome.tabs.update(tab.id, { highlighted: true });
+    // });
+
     // notify completion
     flashBadge("✓", 3000);
   });
@@ -44,7 +48,9 @@ chrome.commands.onCommand.addListener((command) => {
   if (command === "refresh-tabs") {
     refreshAllTabs();
   } else if (command === "select-tabs") {
-    selectAllTabs();
+    // BUG: selecting doesn't work, refresh only for now
+    refreshAllTabs();
+    // selectAllTabs();
   }
 });
 
@@ -56,12 +62,14 @@ chrome.action.onClicked.addListener(() => {
     if (action === "refresh-tabs") {
       refreshAllTabs();
     } else if (action === "select-tabs") {
-      selectAllTabs();
+      // BUG: selecting doesn't work, refresh only for now
+      refreshAllTabs();
+      // selectAllTabs();
     }
   });
 });
 
 // Open the options on install
-chrome.runtime.onInstalled.addListener(() => {
-  chrome.runtime.openOptionsPage();
-});
+// chrome.runtime.onInstalled.addListener(() => {
+//   chrome.runtime.openOptionsPage();
+// });
