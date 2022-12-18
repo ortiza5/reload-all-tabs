@@ -19,13 +19,6 @@ function flashBadge(symbol, duration) {
   });
 }
 
-// Keyboard shortcut listner
-chrome.commands.onCommand.addListener((command) => {
-  if (command === "refresh-tabs") {
-    refreshAllTabs();
-  }
-});
-
 // Extension icon click listener
 chrome.action.onClicked.addListener(() => {
   refreshAllTabs();

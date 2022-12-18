@@ -22,12 +22,11 @@
   "permissions": ["tabs"],
 
   "commands": {
-    "refresh-tabs": {
+    "_execute_action": {
       "suggested_key": {
         "default": "Ctrl+Shift+X",
         "mac": "Command+Shift+X"
-      },
-      "description": "Refresh all tabs"
+      }
     }
   }
 }
